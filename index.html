@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardians of Balance</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Guardians of Balance</h1>
+      <p>
+        A web strategy game built around <strong>ethical progression</strong>:
+        transparent rewards, no anxiety loops, and finite campaigns.
+      </p>
+      <div class="hero-actions">
+        <button id="startBtn">Start Mission</button>
+        <button id="resetBtn" class="secondary">Reset Save</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel stats-panel">
+        <h2>Commander Status</h2>
+        <div class="stat-grid">
+          <div class="stat-card" id="energyCard"><span>Energy</span><strong id="energy">0</strong></div>
+          <div class="stat-card" id="creditsCard"><span>Credits</span><strong id="credits">0</strong></div>
+          <div class="stat-card" id="reputationCard"><span>Reputation</span><strong id="reputation">0</strong></div>
+          <div class="stat-card" id="missionCard"><span>Mission</span><strong id="mission">0</strong></div>
+        </div>
+        <div class="meter-wrap">
+          <label for="campaignProgress">Campaign Progress</label>
+          <progress id="campaignProgress" value="0" max="100"></progress>
+          <small id="progressLabel">0% complete</small>
+        </div>
+      </section>
+
+      <section class="panel map-panel">
+        <h2>Tactical Field</h2>
+        <p>Select a hero and click a tile to move and place them strategically.</p>
+        <div id="characterRoster" class="roster"></div>
+        <div class="legend">
+          <span><i class="legend-goal"></i> Objective zone</span>
+          <span><i class="legend-hero"></i> Hero unit</span>
+        </div>
+        <div id="grid" class="grid" aria-label="tactical grid"></div>
+      </section>
+
+      <section class="panel action-panel">
+        <h2>Actions</h2>
+        <p>Rewards are deterministic and shown up front.</p>
+        <div id="actions" class="action-list"></div>
+      </section>
+
+      <section class="panel log-panel">
+        <h2>Mission Log</h2>
+        <ul id="logList"></ul>
+      </section>
+
+      <section class="panel shop-panel">
+        <h2>Workshop</h2>
+        <p>All upgrades are permanent quality-of-life boosts. No paywalls.</p>
+        <div id="shopItems" class="shop-list"></div>
+      </section>
+
+      <section class="panel team-panel">
+        <h2>Co-op Recognition Board</h2>
+        <ol id="boardList"></ol>
+      </section>
+
+      <section class="panel ethics-panel">
+        <h2>Ethics Guardrails</h2>
+        <ul>
+          <li>✅ No offline penalties or resource theft</li>
+          <li>✅ No loot-box randomness or hidden odds</li>
+          <li>✅ Finite 10-mission campaign with clear ending</li>
+          <li>✅ No urgency popups, no fear-based monetization</li>
+          <li>✅ Transparent systems with optional reset</li>
+        </ul>
+      </section>
+    </main>
+
+    <dialog id="endingDialog">
+      <h2>Campaign Complete 🎉</h2>
+      <p>You finished all missions. Take a break or replay whenever you want.</p>
+      <button id="closeDialogBtn">Nice!</button>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
